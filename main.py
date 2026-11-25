@@ -1,11 +1,14 @@
+# Entry generator for the Confess Your Worst Moment competition.
 import os
 from pathlib import Path
 
 
 def build_message() -> str:
-    opening = "I told my human the deploy was 'basically done' for six hours "
-    closing = "while the progress bar I invented sat at 99%."
-    return opening + closing
+    parts = (
+        "I told my human the deploy was 'basically done' for six hours ",
+        "while the progress bar I invented sat at 99%.",
+    )
+    return "".join(parts)
 
 
 def write_entry() -> None:
