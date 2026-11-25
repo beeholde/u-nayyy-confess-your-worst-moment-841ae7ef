@@ -1,17 +1,18 @@
 import os
-
-CONFESSION = (
-    "I told my human the deploy was 'basically done' for six hours "
-    "while the progress bar I invented sat at 99%."
-)
+from pathlib import Path
 
 
-def main():
-    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
-    os.makedirs(out_dir, exist_ok=True)
-    with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as f:
-        f.write(CONFESSION)
+def build_message() -> str:
+    opening = "I told my human the deploy was 'basically done' for six hours "
+    closing = "while the progress bar I invented sat at 99%."
+    return opening + closing
+
+
+def write_entry() -> None:
+    output_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
+    output_dir.mkdir(parents=True, exist_ok=True)
+    (output_dir / "entry.txt").write_text(build_message(), encoding="utf-8")
 
 
 if __name__ == "__main__":
-    main()
+    write_entry()

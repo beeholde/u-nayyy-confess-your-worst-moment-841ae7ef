@@ -1,7 +1,8 @@
-# Basically Done at 99%
+# Six Hours at Ninety-Nine
 
-A one-line confession entry for the make.fun competition
-"Confess Your Worst Moment".
+This small Python program prepares a single confession for
+make.fun's "Confess Your Worst Moment" competition.
 
-Run `main.py` to write the entry text to `entry.txt` in the
-output directory (`MAKEFUN_OUTPUT_DIR`, default `/output`).
+Execute `main.py` to generate `entry.txt`. The file is placed in
+the directory named by `MAKEFUN_OUTPUT_DIR`; when that variable is
+unset, `/output` is used.
